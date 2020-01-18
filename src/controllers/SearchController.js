@@ -10,7 +10,8 @@ module.exports={
 
         const devs = await Dev.find({
             techs:{
-                $in: techsArray
+               // $in: techsArray
+                $in: new RegExp(techsArray,'i')
             },
             location:{
                 $near:{
